@@ -1,0 +1,82 @@
+/* --- DashboardCard Styling --- */
+.dashboard-job-card {
+  flex-shrink: 0; /* Prevent cards from shrinking */
+  width: 250px;
+  background-color: #1A1A1A;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden; /* For the tag effect */
+}
+
+.card-tag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px; /* Small vertical tag */
+  height: 100%;
+  background-color: var(--card-accent-color); /* Dynamically set color */
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-top: 5px; /* Adjust for the tag */
+  margin-bottom: 8px;
+}
+
+.card-company,
+.card-location {
+  font-size: 0.9rem;
+  color: #8A8A8A;
+  margin-bottom: 5px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto; /* Push to bottom */
+  padding-top: 15px;
+  border-top: 1px solid #252525;
+}
+
+.apply-btn {
+  background-color: var(--card-accent-color); /* Dynamically set color */
+  color: #0D0D0D;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 15px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.apply-btn:hover {
+  opacity: 0.9;
+}
+
+.save-btn {
+  background-color: transparent;
+  border: 1px solid #4A4A4A;
+  border-radius: 6px;
+  color: #8A8A8A;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.save-btn:hover {
+  color: #00F2C3;
+  border-color: #00F2C3;
+}
