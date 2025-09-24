@@ -1,12 +1,9 @@
 import React from 'react';
 
-const DashboardPage = () => {
+const DashboardPage = ({ onLogout }) => {
   // Function to handle user logout
   const handleLogout = () => {
-    // 1. Remove the token from localStorage
-    localStorage.removeItem('authToken');
-    // 2. Redirect the user back to the login page
-    window.location.href = '/';
+    onLogout(); // Call the parent function to handle logout
   };
 
   const styles = `

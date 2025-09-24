@@ -1,40 +1,22 @@
 import React, { useState } from 'react';
 
-const LoginPage = () => {
+const LoginPage = ({ onLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState(''); // State to hold login error messages
 
-  // This is the updated function that communicates with the backend
-  const handleSubmit = async (event) => {
+  // Hardcoded login - no backend authentication required
+  const handleSubmit = (event) => {
     event.preventDefault();
     setError(''); // Clear previous errors
 
-    try {
-      const response = await fetch('/api/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) { // Check if the response was successful (status 200-299)
-        console.log('Login successful:', data);
-        alert('Login successful!');
-        // Here you would typically redirect the user or save the token
-        // Example: window.location.href = '/dashboard';
-      } else {
-        // If the server responded with an error (e.g., status 401)
-        console.error('Login failed:', data.message);
-        setError(data.message); // Set the error message to be displayed
-      }
-    } catch (err) {
-      console.error('An error occurred:', err);
-      setError('Could not connect to the server. Please try again later.');
+    // Hardcoded login - accept any username/password combination
+    if (username.trim() && password.trim()) {
+      console.log('Login successful with hardcoded authentication');
+      onLogin(); // Call the parent function to handle authentication state
+    } else {
+      setError('Please enter both username and password.');
     }
   };
 
