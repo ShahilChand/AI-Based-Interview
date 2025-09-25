@@ -5,22 +5,57 @@ import DashboardCard from './DashboardCard'; // Reusable component for job cards
 const DashboardPage = ({ onLogout }) => {
   return (
     <div className="dashboard-layout">
-      {/* Sidebar - Basic structure */}
+      {/* Sidebar - Enhanced with better icons */}
       <aside className="sidebar">
         <div className="sidebar-logo">
-          <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2z"></path><path d="M10 5.5a.5.5 0 0 0-1 0V8h-2.5A.5.5 0 0 0 6 8.5v1a.5.5 0 0 0 .5.5H9v2.5a.5.5 0 0 0 1 0V10h2.5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H10V5.5z"></path></svg>
+          <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
         </div>
         <nav className="sidebar-nav">
           <ul>
             <li><a href="#" className="active">
-              <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M540.3 358.3c-23.9 1.1-47.8 2-71.8 2-24.8 0-49.7-.9-74.4-2.8-19.1-1.5-38.3-3.9-57.4-6.8-5.3-.8-10.4-3.1-13.8-7.2-25.7-30.1-49.4-61.9-74.8-91.8C222.6 195 187.6 142.1 134.8 113.8c-27.4-14.7-56.7-27.7-86.4-39.2-2.3-.9-4.8-1.5-7.3-1.9-8.4-1.2-16.7-2-25-2.5-4.1-.2-8.1-.3-12.1-.3-12.3 0-24.3.4-36.2 1.3-3.6.3-7.2.7-10.7 1.1-.9.1-1.9.3-2.8.4-.5.1-1 .1-1.5.2-.2.1-.3.1-.5.1-.1 0-.2 0-.3.1H0v30.4h42.7c.3-.1.6-.1 1-.2 1.8-.2 3.6-.5 5.4-.7 1.3-.2 2.7-.3 4-.5 4.3-.6 8.7-1.1 13-1.4 12.3-1 24.6-1.5 37-1.5 8 0 16 .3 23.9.7 2.3.1 4.5.4 6.8.8 29.5 4.7 57.7 15 84.4 30.6 37.1 21.6 69.8 51.5 98.6 86.8 29.3 36 55.4 73.8 79.5 113.7 2.6 4.3 6.1 7.2 10.7 8.2 21.6 3.6 43.6 6.5 65.8 8.4 25.1 2.2 50.4 3.2 75.8 3.2 24.1 0 48.2-.8 72.1-2.4 22.8-1.5 45.4-3.5 67.8-6.1 1.7-.2 3.5-.5 5.2-.8 2.3-.4 4.5-.8 6.8-1.4H576V358.3h-35.7zM288 320c-7.7 0-14-6.3-14-14v-92c0-7.7 6.3-14 14-14s14 6.3 14 14v92c0 7.7-6.3 14-14 14zm-14-138v-92c0-7.7 6.3-14 14-14s14 6.3 14 14v92c0 7.7-6.3 14-14 14zm140 138v-92c0-7.7 6.3-14 14-14s14 6.3 14 14v92c0 7.7-6.3 14-14 14zm-14-138v-92c0-7.7 6.3-14 14-14s14 6.3 14 14v92c0 7.7-6.3 14-14 14zM42.7 448c-3.1 0-6.1-.1-9.1-.3-.2 0-.3 0-.5-.1-1.3-.1-2.6-.2-3.9-.3-1.6-.1-3.2-.3-4.8-.5-4.9-.6-9.7-1.2-14.5-2.1-.4-.1-.8-.2-1.2-.3-10.9-2.3-21.3-5.3-31.5-8.9-.3-.1-.5-.2-.8-.3H0v30.4h40.4c.1-.1.2-.1.3-.1 1 .1 2 .2 3 .3 1.1.1 2.2.2 3.3.3 2 .2 4 .4 6 .6 4.6.5 9.3 1 14 1.5 12.3 1.3 24.9 2 37.6 2 8 0 16-.3 23.9-.7 2.2-.1 4.5-.3 6.7-.7 30-4.6 58.7-14.7 85.5-30.2 38.3-22.1 71.8-52.7 101.2-88.7 28.5-34.9 53.9-71.8 76.8-111.4 3.8-6.6 9.8-11.4 17.5-12.7 22.8-3.7 46-6.6 69.4-8.7 25.1-2.2 50.5-3.2 75.9-3.2 24.1 0 48.2.8 72.2 2.4 22.8 1.5 45.4 3.5 67.8 6.1 1.8.2 3.5.5 5.3.8 2.3.4 4.5.8 6.8 1.4H576V448h-34.9c-.1 0-.3.1-.4.1-1.3.1-2.6.2-3.9.3-1.6.1-3.2.3-4.8.5-4.8.6-9.7 1.2-14.5 2.1-.4.1-.8.2-1.2.3-11 2.3-21.3 5.3-31.5 8.9-.2.1-.5.2-.7.3h-40.4c-.1 0-.2-.1-.3-.1-1-.1-2-.2-3-.3-1.1-.1-2.2-.2-3.3-.3-2-.2-4-.4-6-.6-4.6-.5-9.3-1-14-1.5-12.3-1.3-24.9-2-37.6-2-8 0-16.1.3-24 .7-2.3.1-4.5.3-6.8.7-29.9 4.6-58.6 14.7-85.5 30.2-38.3 22.1-71.8 52.7-101.2 88.7-28.5 34.9-53.9 71.8-76.8 111.4-3.8 6.6-9.8 11.4-17.5 12.7-22.8 3.7-46 6.6-69.4 8.7-25.1 2.2-50.5 3.2-75.9 3.2-24.1 0-48.2-.8-72.2-2.4-22.8-1.5-45.4-3.5-67.8-6.1-1.8-.2-3.5-.5-5.3-.8-2.3-.4-4.5-.8-6.8-1.4z"></path></svg> Dashboard</a></li>
-            <li><a href="#"><svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208zm-208 0c0-77.2 62.8-140 140-140s140 62.8 140 140-62.8 140-140 140-140-62.8-140-140z"></path></svg> Jobs</a></li>
-            <li><a href="#"><svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M496 128V96c0-17.67-14.33-32-32-32H48C30.33 64 16 78.33 16 96v32c-17.67 0-32 14.33-32 32v256c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32V160c0-17.67-14.33-32-32-32zM32 160h448v256H32V160zm0-64h448V96H32v-32zm32 128h128v64H64v-64zm0 96h128v64H64v-64z"></path></svg> Applications</a></li>
-            <li><a href="#"><svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M448 32H64C28.65 32 0 60.65 0 96v320c0 35.35 28.65 64 64 64h384c35.35 0 64-28.65 64-64V96c0-35.35-28.65-64-64-64zM64 416V96h384l.002 320H64zM208 224h96v96h-96zm64-96h-32v-32h32v32zm0 192h-32v-32h32v32z"></path></svg> Settings</a></li>
+              <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 13h1v7c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-7h1c.55 0 .85-.68.53-1.08l-8.5-8.52c-.3-.3-.78-.3-1.08 0L2.47 11.92C2.15 12.32 2.45 13 3 13zM12 4.5L18.5 11H5.5L12 4.5z"/>
+                <circle cx="12" cy="16" r="2"/>
+              </svg> 
+              Dashboard</a>
+            </li>
+            <li><a href="#">
+              <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 6h-2.18C17.4 4.84 16.3 4 15 4H9c-1.3 0-2.4.84-2.82 2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-5 3c.83 0 1.5.67 1.5 1.5 0 .83-.67 1.5-1.5 1.5-.83 0-1.5-.67-1.5-1.5 0-.83.67-1.5 1.5-1.5zM9 9c.83 0 1.5.67 1.5 1.5 0 .83-.67 1.5-1.5 1.5-.83 0-1.5-.67-1.5-1.5 0-.83.67-1.5 1.5-1.5z"/>
+                <path d="M12 15c-1.5 0-2.8-.8-3.5-2h7c-.7 1.2-2 2-3.5 2z"/>
+              </svg>
+              Jobs</a>
+            </li>
+            <li><a href="#">
+              <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 2 2h8c1.1 0 2-.9 2-2V8l-6-6zM16 18H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+              </svg>
+              Applications</a>
+            </li>
+            <li><a href="#">
+              <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H9V3H13.5L18.5 8H21ZM9 7V9H21V7H9Z"/>
+                <circle cx="12" cy="15.5" r="3.5"/>
+                <path d="M12 22v-4l1.5 1.5L16 17l-4-4-4 4 2.5 2.5L12 18v4z"/>
+              </svg>
+              Profile</a>
+            </li>
+            <li><a href="#">
+              <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"/>
+              </svg>
+              Settings</a>
+            </li>
           </ul>
         </nav>
         <button className="sidebar-logout-btn" onClick={onLogout}>
-          <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M160 96H47.9c-26.5 0-47.9 21.5-47.9 48v224c0 26.5 21.5 48 47.9 48H160c17.6 0 32 14.4 32 32v32c0 17.6-14.4 32-32 32H47.9C21.4 480 0 458.6 0 432V144C0 117.4 21.4 96 47.9 96H160c17.6 0 32-14.4 32-32V32c0-17.6-14.4-32-32-32zm208 240c-6.2 0-12.1-2.3-16.6-6.7-12.3-12-12.3-31.7 0-43.9l51-51-51-51c-12.3-12-12.3-31.7 0-43.9 12.3-12 32.1-12 43.9 0l73.4 73.4c12 12 12 31.7 0 43.7L392 345.4c-4.5 4.5-10.4 6.6-16 6.6zm-50-144H208c-17.6 0-32 14.4-32 32v32c0 17.6 14.4 32 32 32h110c17.6 0 32-14.4 32-32v-32c0-17.6-14.4-32-32-32z"></path></svg>
+          <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 7L15.59 8.41 18.17 11H8V13H18.17L15.59 15.59 17 17L22 12Z"/>
+            <path d="M4 5H12V3H4C2.9 3 2 3.9 2 5V19C2 20.1 2.9 21 4 21H12V19H4V5Z"/>
+          </svg>
           Logout
         </button>
       </aside>
@@ -28,71 +63,209 @@ const DashboardPage = ({ onLogout }) => {
       {/* Main Content */}
       <main className="dashboard-main-content">
         <header className="dashboard-header">
-          <h1>Candidate Dashboard</h1>
-          {/* You can add a user avatar/profile icon here if needed */}
+          <div className="header-content">
+            <div>
+              <h1>Welcome back, John!</h1>
+              <p className="header-subtitle">Here's what's happening with your job search today</p>
+            </div>
+            <div className="header-actions">
+              <button className="notification-btn">
+                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 22C13.1 22 14 21.1 14 20H10C10 21.1 10.9 22 12 22ZM18 16V11C18 7.93 16.36 5.36 13.5 4.68V4C13.5 3.17 12.83 2.5 12 2.5S10.5 3.17 10.5 4V4.68C7.63 5.36 6 7.92 6 11V16L4 18V19H20V18L18 16Z"/>
+                </svg>
+                <span className="notification-badge">3</span>
+              </button>
+              <div className="user-avatar">
+                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 12C14.21 12 16 10.21 16 8S14.21 4 12 4 8 5.79 8 8 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
         </header>
 
         {/* Top Stat Cards */}
         <section className="stat-cards">
           <div className="stat-card">
             <div className="stat-card-header">
-              <h3>My Applications</h3>
-              <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M19 3H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zM5 19V5h14l.002 14H5z"></path><path d="M11 7h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2zM7 7h2v2H7zm0 4h2v2H7zm0 4h2v2H7zm8-8h2v2h-2zm0 4h2v2h-2zm0 4h2v2h-2z"></path></svg>
+              <div className="stat-icon applications">
+                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.89 22 5.99 22H18C19.1 22 20 21.1 20 20V8L14 2ZM18 20H6V4H13V9H18V20Z"/>
+                  <circle cx="12" cy="14" r="2"/>
+                </svg>
+              </div>
+              <div>
+                <h3>My Applications</h3>
+                <p className="stat-value">24</p>
+                <p className="stat-description">Active applications</p>
+              </div>
             </div>
-            <p className="stat-value">14</p>
-            <p className="stat-description">Total jobs you've applied to</p>
+            <div className="stat-trend positive">
+              <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 6L10.5 16.5L6 12L7.5 10.5L10.5 13.5L14.5 4.5L16 6Z"/>
+              </svg>
+              +12% from last month
+            </div>
           </div>
 
           <div className="stat-card">
             <div className="stat-card-header">
-              <h3>Application Success Rate</h3>
-              <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M19 3H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zM5 19V5h14l.002 14H5z"></path><path d="M16 7L8 15v2h2l8-8z"></path></svg>
+              <div className="stat-icon interviews">
+                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"/>
+                  <circle cx="12" cy="9" r="1"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Interview Requests</h3>
+                <p className="stat-value">8</p>
+                <p className="stat-description">Pending interviews</p>
+              </div>
             </div>
-            <p className="stat-value">0.0%</p>
-            <p className="stat-description">Percentage of successful applications</p>
+            <div className="stat-trend positive">
+              <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 14L12 9L17 14H7Z"/>
+              </svg>
+              +5 this week
+            </div>
           </div>
 
           <div className="stat-card">
             <div className="stat-card-header">
-              <h3>Interview Opportunities</h3>
-              <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M19 3H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zM5 19V5h14l.002 14H5z"></path><path d="M12 15h-1v-4H7v-2h4V7h2v2h4v2h-4v4z"></path></svg>
+              <div className="stat-icon success">
+                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Success Rate</h3>
+                <p className="stat-value">33%</p>
+                <p className="stat-description">Interview conversion</p>
+              </div>
             </div>
-            <p className="stat-value">12</p>
-            <p className="stat-description">Applications in review or accepted status</p>
+            <div className="stat-trend positive">
+              <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 14L12 9L17 14H7Z"/>
+              </svg>
+              +8% improvement
+            </div>
           </div>
         </section>
 
         {/* Browse Available Jobs */}
         <section className="available-jobs">
           <div className="section-header">
-            <h2>Browse Available Jobs</h2>
+            <div>
+              <h2>Recommended for You</h2>
+              <p>Jobs matching your profile and preferences</p>
+            </div>
             <button className="view-all-btn">
-              <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M10 17L15 12 10 7z"></path></svg>
+              View All
+              <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 6L8.59 7.41 13.17 12L8.59 16.59 10 18L16 12L10 6Z"/>
+              </svg>
             </button>
           </div>
-          <h3>Explore Opportunities</h3>
-          <p>Find and apply to new job openings</p>
 
           <div className="job-cards-scroll-container">
-            {/* These are placeholders for the colorful cards in your image */}
-            <DashboardCard title="Software Engineer" company="Tech Corp" location="Remote" color="purple" />
-            <DashboardCard title="Data Scientist" company="Data Minds" location="New York" color="blue" />
-            <DashboardCard title="UX Designer" company="Creative Hub" location="London" color="pink" />
-            <DashboardCard title="Product Manager" company="Innovate Inc." location="San Francisco" color="green" />
-            <DashboardCard title="Marketing Specialist" company="Growth Co." location="Remote" color="orange" />
+            {/* Enhanced job cards */}
+            <DashboardCard title="Senior Software Engineer" company="TechFlow Inc." location="Remote • Full-time" color="purple" salary="$120k - $150k" />
+            <DashboardCard title="Data Scientist" company="DataMinds Analytics" location="New York • Hybrid" color="blue" salary="$110k - $140k" />
+            <DashboardCard title="UX/UI Designer" company="Creative Studio" location="London • Remote" color="pink" salary="$80k - $100k" />
+            <DashboardCard title="Product Manager" company="InnovateCorp" location="San Francisco • On-site" color="green" salary="$130k - $160k" />
+            <DashboardCard title="DevOps Engineer" company="CloudTech Solutions" location="Remote • Full-time" color="orange" salary="$115k - $145k" />
+            <DashboardCard title="Frontend Developer" company="WebCraft Agency" location="Seattle • Hybrid" color="purple" salary="$95k - $125k" />
           </div>
         </section>
 
-        {/* Applications by Status */}
-        <section className="applications-by-status">
-          <h2>Applications by Status</h2>
-          <p>Distribution of your job applications</p>
-          {/* Placeholder for a chart or list */}
-          <div className="chart-placeholder">
-            {/* You can integrate a charting library here */}
-            <p>Chart or detailed list goes here</p>
-          </div>
-        </section>
+        {/* Recent Activity & Quick Actions */}
+        <div className="bottom-section">
+          <section className="recent-activity">
+            <div className="section-header">
+              <h2>Recent Activity</h2>
+              <button className="view-all-btn secondary">
+                View All
+                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 6L8.59 7.41 13.17 12L8.59 16.59 10 18L16 12L10 6Z"/>
+                </svg>
+              </button>
+            </div>
+            
+            <div className="activity-list">
+              <div className="activity-item">
+                <div className="activity-icon interview">
+                  <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"/>
+                  </svg>
+                </div>
+                <div className="activity-content">
+                  <h4>Interview Scheduled</h4>
+                  <p>TechFlow Inc. • Software Engineer Role</p>
+                  <span className="activity-time">2 hours ago</span>
+                </div>
+              </div>
+              
+              <div className="activity-item">
+                <div className="activity-icon application">
+                  <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.89 22 5.99 22H18C19.1 22 20 21.1 20 20V8L14 2Z"/>
+                  </svg>
+                </div>
+                <div className="activity-content">
+                  <h4>Application Submitted</h4>
+                  <p>DataMinds Analytics • Data Scientist</p>
+                  <span className="activity-time">1 day ago</span>
+                </div>
+              </div>
+              
+              <div className="activity-item">
+                <div className="activity-icon success">
+                  <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z"/>
+                  </svg>
+                </div>
+                <div className="activity-content">
+                  <h4>Profile Viewed</h4>
+                  <p>Creative Studio • UX Designer Position</p>
+                  <span className="activity-time">2 days ago</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="quick-actions">
+            <h2>Quick Actions</h2>
+            <div className="action-buttons">
+              <button className="action-btn primary">
+                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z"/>
+                </svg>
+                Create New Application
+              </button>
+              
+              <button className="action-btn secondary">
+                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 13C9.33 13 4 14.34 4 17V18H20V17C20 14.34 14.67 13 12 13ZM12 4C13.1 4 14 4.9 14 6S13.1 8 12 8 10 7.1 10 6 10.9 4 12 4Z"/>
+                </svg>
+                Update Profile
+              </button>
+              
+              <button className="action-btn secondary">
+                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.89 22 5.99 22H18C19.1 22 20 21.1 20 20V8L14 2ZM18 20H6V4H13V9H18V20Z"/>
+                </svg>
+                Upload Resume
+              </button>
+              
+              <button className="action-btn secondary">
+                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 6H16L14 4H10L8 6H4C2.9 6 2 6.9 2 8V19C2 20.1 2.9 21 4 21H20C21.1 21 22 20.1 22 19V8C22 6.9 21.1 6 20 6ZM20 19H4V8H20V19ZM12 18C15.31 18 18 15.31 18 12S15.31 6 12 6 6 8.69 6 12 8.69 18 12 18ZM12 8C14.21 8 16 9.79 16 12S14.21 16 12 16 8 14.21 8 12 9.79 8 12 8Z"/>
+                </svg>
+                Browse Companies
+              </button>
+            </div>
+          </section>
+        </div>
       </main>
     </div>
   );

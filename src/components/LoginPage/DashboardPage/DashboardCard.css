@@ -1,82 +1,267 @@
-/* --- DashboardCard Styling --- */
+/* Enhanced Dashboard Card Styling */
 .dashboard-job-card {
-  flex-shrink: 0; /* Prevent cards from shrinking */
-  width: 250px;
-  background-color: #1A1A1A;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+  width: 320px;
+  min-height: 280px;
+  background: linear-gradient(145deg, #1a1a1a, #161616);
+  border: 1px solid #2a2a2a;
+  border-radius: 20px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   position: relative;
-  overflow: hidden; /* For the tag effect */
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.dashboard-job-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--card-accent-color), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dashboard-job-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-job-card:hover::before {
+  opacity: 1;
 }
 
 .card-tag {
   position: absolute;
   top: 0;
   left: 0;
-  width: 10px; /* Small vertical tag */
+  width: 4px;
   height: 100%;
-  background-color: var(--card-accent-color); /* Dynamically set color */
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
+  background: var(--card-accent-color);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.dashboard-job-card:hover .card-tag {
+  width: 6px;
+  opacity: 1;
+  box-shadow: 0 0 20px var(--card-accent-color);
+}
+
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .card-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #FFFFFF;
-  margin-top: 5px; /* Adjust for the tag */
-  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.3;
+  transition: color 0.3s ease;
 }
 
-.card-company,
-.card-location {
-  font-size: 0.9rem;
-  color: #8A8A8A;
-  margin-bottom: 5px;
+.dashboard-job-card:hover .card-title {
+  color: #00F2C3;
+}
+
+.card-company {
+  font-size: 14px;
+  font-weight: 600;
+  color: #aaa;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-company::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--card-accent-color);
+  border-radius: 50%;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.card-location,
+.card-salary {
+  font-size: 13px;
+  color: #888;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.card-location svg,
+.card-salary svg {
+  width: 14px;
+  height: 14px;
+  color: #666;
+  flex-shrink: 0;
+}
+
+.card-salary {
+  color: #00F2C3;
+  font-weight: 600;
+  background: rgba(0, 242, 195, 0.1);
+  padding: 6px 12px;
+  border-radius: 20px;
+  width: fit-content;
+  border: 1px solid rgba(0, 242, 195, 0.2);
+}
+
+.card-salary svg {
+  color: #00F2C3;
 }
 
 .card-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: auto; /* Push to bottom */
-  padding-top: 15px;
-  border-top: 1px solid #252525;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #2a2a2a;
+  gap: 12px;
 }
 
 .apply-btn {
-  background-color: var(--card-accent-color); /* Dynamically set color */
-  color: #0D0D0D;
+  background: var(--card-accent-color);
+  color: #ffffff;
   border: none;
-  border-radius: 6px;
-  padding: 8px 15px;
-  font-size: 0.85rem;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.apply-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
 }
 
 .apply-btn:hover {
-  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.1);
+}
+
+.apply-btn:hover::before {
+  left: 100%;
+}
+
+.apply-btn:active {
+  transform: translateY(0);
 }
 
 .save-btn {
-  background-color: transparent;
-  border: 1px solid #4A4A4A;
-  border-radius: 6px;
-  color: #8A8A8A;
-  padding: 8px;
+  background: transparent;
+  border: 1px solid #333;
+  border-radius: 12px;
+  color: #888;
+  padding: 12px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: color 0.3s ease, border-color 0.3s ease;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 .save-btn:hover {
-  color: #00F2C3;
-  border-color: #00F2C3;
+  color: #ff6b6b;
+  border-color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.1);
+  transform: translateY(-2px);
+}
+
+.save-btn svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+.save-btn:hover svg {
+  transform: scale(1.1);
+}
+
+/* Color Variants */
+.dashboard-job-card[style*="--card-accent-color: #8e44ad"] .card-company::before {
+  background: #8e44ad;
+}
+
+.dashboard-job-card[style*="--card-accent-color: #3498db"] .card-company::before {
+  background: #3498db;
+}
+
+.dashboard-job-card[style*="--card-accent-color: #e91e63"] .card-company::before {
+  background: #e91e63;
+}
+
+.dashboard-job-card[style*="--card-accent-color: #2ecc71"] .card-company::before {
+  background: #2ecc71;
+}
+
+.dashboard-job-card[style*="--card-accent-color: #f39c12"] .card-company::before {
+  background: #f39c12;
+}
+
+/* Responsive Card */
+@media (max-width: 900px) {
+  .dashboard-job-card {
+    width: 280px;
+    min-height: 260px;
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 16px;
+  }
+  
+  .card-footer {
+    margin-top: 16px;
+    padding-top: 16px;
+  }
+  
+  .apply-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-job-card {
+    width: 260px;
+    min-height: 240px;
+    padding: 18px;
+  }
 }
