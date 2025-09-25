@@ -1,0 +1,212 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e4]:
+  - complementary [ref=e5]:
+    - img [ref=e7]
+    - navigation [ref=e10]:
+      - list [ref=e11]:
+        - listitem [ref=e12]:
+          - link "Dashboard" [ref=e13] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e14] [cursor=pointer]
+            - text: Dashboard
+        - listitem [ref=e17]:
+          - link "Jobs" [ref=e18] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e19] [cursor=pointer]
+            - text: Jobs
+        - listitem [ref=e22]:
+          - link "Applications" [ref=e23] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e24] [cursor=pointer]
+            - text: Applications
+        - listitem [ref=e26]:
+          - link "Profile" [ref=e27] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e28] [cursor=pointer]
+            - text: Profile
+        - listitem [ref=e32]:
+          - link "Settings" [ref=e33] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e34] [cursor=pointer]
+            - text: Settings
+    - button "Logout" [ref=e36] [cursor=pointer]:
+      - img [ref=e37] [cursor=pointer]
+      - text: Logout
+  - main [ref=e40]:
+    - generic [ref=e42]:
+      - generic [ref=e43]:
+        - heading "Welcome back, John!" [level=1] [ref=e44]
+        - paragraph [ref=e45]: Here's what's happening with your job search today
+      - generic [ref=e46]:
+        - button "3" [ref=e47] [cursor=pointer]:
+          - img [ref=e48] [cursor=pointer]
+          - generic [ref=e50] [cursor=pointer]: "3"
+        - img [ref=e52] [cursor=pointer]
+    - generic [ref=e54]:
+      - generic [ref=e55]:
+        - generic [ref=e56]:
+          - img [ref=e58]
+          - generic [ref=e61]:
+            - heading "My Applications" [level=3] [ref=e62]
+            - paragraph [ref=e63]: "24"
+            - paragraph [ref=e64]: Active applications
+        - generic [ref=e65]:
+          - img [ref=e66]
+          - text: +12% from last month
+      - generic [ref=e68]:
+        - generic [ref=e69]:
+          - img [ref=e71]
+          - generic [ref=e74]:
+            - heading "Interview Requests" [level=3] [ref=e75]
+            - paragraph [ref=e76]: "8"
+            - paragraph [ref=e77]: Pending interviews
+        - generic [ref=e78]:
+          - img [ref=e79]
+          - text: +5 this week
+      - generic [ref=e81]:
+        - generic [ref=e82]:
+          - img [ref=e84]
+          - generic [ref=e86]:
+            - heading "Success Rate" [level=3] [ref=e87]
+            - paragraph [ref=e88]: 33%
+            - paragraph [ref=e89]: Interview conversion
+        - generic [ref=e90]:
+          - img [ref=e91]
+          - text: +8% improvement
+    - generic [ref=e93]:
+      - generic [ref=e94]:
+        - generic [ref=e95]:
+          - heading "Recommended for You" [level=2] [ref=e96]
+          - paragraph [ref=e97]: Jobs matching your profile and preferences
+        - button "View All" [ref=e98] [cursor=pointer]:
+          - text: View All
+          - img [ref=e99] [cursor=pointer]
+      - generic [ref=e101]:
+        - generic [ref=e102] [cursor=pointer]:
+          - generic [ref=e104] [cursor=pointer]:
+            - heading "Senior Software Engineer" [level=4] [ref=e105] [cursor=pointer]
+            - paragraph [ref=e106] [cursor=pointer]: TechFlow Inc.
+            - paragraph [ref=e107] [cursor=pointer]:
+              - img [ref=e108] [cursor=pointer]
+              - text: Remote • Full-time
+            - paragraph [ref=e110] [cursor=pointer]:
+              - img [ref=e111] [cursor=pointer]
+              - text: $120k - $150k
+          - generic [ref=e113] [cursor=pointer]:
+            - button "Apply Now" [ref=e114] [cursor=pointer]
+            - button [ref=e115] [cursor=pointer]:
+              - img [ref=e116] [cursor=pointer]
+        - generic [ref=e118] [cursor=pointer]:
+          - generic [ref=e120] [cursor=pointer]:
+            - heading "Data Scientist" [level=4] [ref=e121] [cursor=pointer]
+            - paragraph [ref=e122] [cursor=pointer]: DataMinds Analytics
+            - paragraph [ref=e123] [cursor=pointer]:
+              - img [ref=e124] [cursor=pointer]
+              - text: New York • Hybrid
+            - paragraph [ref=e126] [cursor=pointer]:
+              - img [ref=e127] [cursor=pointer]
+              - text: $110k - $140k
+          - generic [ref=e129] [cursor=pointer]:
+            - button "Apply Now" [ref=e130] [cursor=pointer]
+            - button [ref=e131] [cursor=pointer]:
+              - img [ref=e132] [cursor=pointer]
+        - generic [ref=e134] [cursor=pointer]:
+          - generic [ref=e136] [cursor=pointer]:
+            - heading "UX/UI Designer" [level=4] [ref=e137] [cursor=pointer]
+            - paragraph [ref=e138] [cursor=pointer]: Creative Studio
+            - paragraph [ref=e139] [cursor=pointer]:
+              - img [ref=e140] [cursor=pointer]
+              - text: London • Remote
+            - paragraph [ref=e142] [cursor=pointer]:
+              - img [ref=e143] [cursor=pointer]
+              - text: $80k - $100k
+          - generic [ref=e145] [cursor=pointer]:
+            - button "Apply Now" [ref=e146] [cursor=pointer]
+            - button [ref=e147] [cursor=pointer]:
+              - img [ref=e148] [cursor=pointer]
+        - generic [ref=e150] [cursor=pointer]:
+          - generic [ref=e152] [cursor=pointer]:
+            - heading "Product Manager" [level=4] [ref=e153] [cursor=pointer]
+            - paragraph [ref=e154] [cursor=pointer]: InnovateCorp
+            - paragraph [ref=e155] [cursor=pointer]:
+              - img [ref=e156] [cursor=pointer]
+              - text: San Francisco • On-site
+            - paragraph [ref=e158] [cursor=pointer]:
+              - img [ref=e159] [cursor=pointer]
+              - text: $130k - $160k
+          - generic [ref=e161] [cursor=pointer]:
+            - button "Apply Now" [ref=e162] [cursor=pointer]
+            - button [ref=e163] [cursor=pointer]:
+              - img [ref=e164] [cursor=pointer]
+        - generic [ref=e166] [cursor=pointer]:
+          - generic [ref=e168] [cursor=pointer]:
+            - heading "DevOps Engineer" [level=4] [ref=e169] [cursor=pointer]
+            - paragraph [ref=e170] [cursor=pointer]: CloudTech Solutions
+            - paragraph [ref=e171] [cursor=pointer]:
+              - img [ref=e172] [cursor=pointer]
+              - text: Remote • Full-time
+            - paragraph [ref=e174] [cursor=pointer]:
+              - img [ref=e175] [cursor=pointer]
+              - text: $115k - $145k
+          - generic [ref=e177] [cursor=pointer]:
+            - button "Apply Now" [ref=e178] [cursor=pointer]
+            - button [ref=e179] [cursor=pointer]:
+              - img [ref=e180] [cursor=pointer]
+        - generic [ref=e182] [cursor=pointer]:
+          - generic [ref=e184] [cursor=pointer]:
+            - heading "Frontend Developer" [level=4] [ref=e185] [cursor=pointer]
+            - paragraph [ref=e186] [cursor=pointer]: WebCraft Agency
+            - paragraph [ref=e187] [cursor=pointer]:
+              - img [ref=e188] [cursor=pointer]
+              - text: Seattle • Hybrid
+            - paragraph [ref=e190] [cursor=pointer]:
+              - img [ref=e191] [cursor=pointer]
+              - text: $95k - $125k
+          - generic [ref=e193] [cursor=pointer]:
+            - button "Apply Now" [ref=e194] [cursor=pointer]
+            - button [ref=e195] [cursor=pointer]:
+              - img [ref=e196] [cursor=pointer]
+    - generic [ref=e198]:
+      - generic [ref=e199]:
+        - generic [ref=e200]:
+          - heading "Recent Activity" [level=2] [ref=e201]
+          - button "View All" [ref=e202] [cursor=pointer]:
+            - text: View All
+            - img [ref=e203] [cursor=pointer]
+        - generic [ref=e205]:
+          - generic [ref=e206]:
+            - img [ref=e208]
+            - generic [ref=e210]:
+              - heading "Interview Scheduled" [level=4] [ref=e211]
+              - paragraph [ref=e212]: TechFlow Inc. • Software Engineer Role
+              - generic [ref=e213]: 2 hours ago
+          - generic [ref=e214]:
+            - img [ref=e216]
+            - generic [ref=e218]:
+              - heading "Application Submitted" [level=4] [ref=e219]
+              - paragraph [ref=e220]: DataMinds Analytics • Data Scientist
+              - generic [ref=e221]: 1 day ago
+          - generic [ref=e222]:
+            - img [ref=e224]
+            - generic [ref=e226]:
+              - heading "Profile Viewed" [level=4] [ref=e227]
+              - paragraph [ref=e228]: Creative Studio • UX Designer Position
+              - generic [ref=e229]: 2 days ago
+      - generic [ref=e230]:
+        - heading "Quick Actions" [level=2] [ref=e231]
+        - generic [ref=e232]:
+          - button "Create New Application" [ref=e233] [cursor=pointer]:
+            - img [ref=e234] [cursor=pointer]
+            - text: Create New Application
+          - button "Update Profile" [ref=e236] [cursor=pointer]:
+            - img [ref=e237] [cursor=pointer]
+            - text: Update Profile
+          - button "Upload Resume" [ref=e239] [cursor=pointer]:
+            - img [ref=e240] [cursor=pointer]
+            - text: Upload Resume
+          - button "Browse Companies" [ref=e242] [cursor=pointer]:
+            - img [ref=e243] [cursor=pointer]
+            - text: Browse Companies
+```
