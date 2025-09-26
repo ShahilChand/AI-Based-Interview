@@ -1,8 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './DashboardPage.css';
 import DashboardCard from './DashboardCard'; // Reusable component for job cards
 
 const DashboardPage = ({ onLogout }) => {
+  const navigate = useNavigate();
+
+  const handleStartInterview = () => {
+    navigate('/interview');
+  };
+
   return (
     <div className="dashboard-layout">
       {/* Sidebar - Enhanced with better icons */}
@@ -21,6 +28,16 @@ const DashboardPage = ({ onLogout }) => {
                 <circle cx="12" cy="16" r="2"/>
               </svg> 
               Dashboard</a>
+            </li>
+            <li>
+              <button onClick={handleStartInterview} className="sidebar-interview-btn">
+                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z"/>
+                  <circle cx="12" cy="9" r="2"/>
+                  <path d="M7 17H17V15H7V17Z"/>
+                </svg>
+                AI Interview
+              </button>
             </li>
             <li><a href="#">
               <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
@@ -148,6 +165,38 @@ const DashboardPage = ({ onLogout }) => {
                 <path d="M7 14L12 9L17 14H7Z"/>
               </svg>
               +8% improvement
+            </div>
+          </div>
+        </section>
+
+        {/* AI Interview Banner */}
+        <section className="ai-interview-banner">
+          <div className="banner-content">
+            <div className="banner-left">
+              <div className="banner-icon">
+                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z"/>
+                  <circle cx="12" cy="9" r="2"/>
+                </svg>
+              </div>
+              <div className="banner-text">
+                <h3>Practice with AI Interview</h3>
+                <p>Get personalized interview practice with our AI-powered mock interviews</p>
+                <ul className="banner-features">
+                  <li>✓ Real-time voice conversation</li>
+                  <li>✓ Adaptive questioning based on your responses</li>
+                  <li>✓ Comprehensive feedback and analysis</li>
+                </ul>
+              </div>
+            </div>
+            <div className="banner-right">
+              <button onClick={handleStartInterview} className="start-interview-btn">
+                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 5V19L19 12L8 5Z"/>
+                </svg>
+                Start AI Interview
+              </button>
+              <p className="banner-note">Takes 15-30 minutes</p>
             </div>
           </div>
         </section>

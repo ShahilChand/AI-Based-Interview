@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import LoginPage from './components/LoginPage/loginPage.jsx';
 import DashboardPage from './components/LoginPage/DashboardPage/DashboardPage.jsx';
+import InterviewPage from './components/InterviewPage/InterviewPage.jsx';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -31,6 +32,14 @@ function App() {
             element={
               isAuthenticated ? 
                 <DashboardPage onLogout={handleLogout} /> : 
+                <Navigate to="/" replace />
+            } 
+          />
+          <Route 
+            path="/interview" 
+            element={
+              isAuthenticated ? 
+                <InterviewPage /> : 
                 <Navigate to="/" replace />
             } 
           />
