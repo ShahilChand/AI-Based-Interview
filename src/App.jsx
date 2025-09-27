@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import LoginPage from './components/LoginPage/loginPage.jsx';
-import DashboardPage from './components/LoginPage/DashboardPage/DashboardPage.jsx';
+import PortalLayout from './components/portal/PortalLayout.jsx';
 import InterviewPage from './components/InterviewPage/InterviewPage.jsx';
 
 function App() {
@@ -23,15 +23,15 @@ function App() {
             path="/" 
             element={
               isAuthenticated ? 
-                <Navigate to="/dashboard" replace /> : 
+                <Navigate to="/portal" replace /> : 
                 <LoginPage onLogin={handleLogin} />
             } 
           />
           <Route 
-            path="/dashboard" 
+            path="/portal" 
             element={
               isAuthenticated ? 
-                <DashboardPage onLogout={handleLogout} /> : 
+                <PortalLayout onLogout={handleLogout} /> : 
                 <Navigate to="/" replace />
             } 
           />
