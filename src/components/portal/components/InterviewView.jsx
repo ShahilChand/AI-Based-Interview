@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { InterviewPage } from '../../InterviewPage/InterviewPage';
-import { PreInterviewSetup } from '../../InterviewPage/PreInterviewSetup';
+import InterviewPage from '../../InterviewPage/InterviewPage';
+import PreInterviewSetup from '../../InterviewPage/PreInterviewSetup';
 
 const InterviewView = () => {
   const [currentStage, setCurrentStage] = useState('overview'); // overview, setup, interview
