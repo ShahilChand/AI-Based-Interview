@@ -16,14 +16,6 @@ const studentSchema = new mongoose.Schema(
       type: String, 
       trim: true 
     },
-    skills: { 
-      type: [String], 
-      default: [] 
-    },
-    interests: { 
-      type: [String], 
-      default: [] 
-    },
     email: { 
       type: String, 
       required: true, 

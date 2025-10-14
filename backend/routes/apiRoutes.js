@@ -1,7 +1,7 @@
 import express from "express";
 import bcrypt from "bcryptjs";
-import Student from "../models/Student.js";
-import Job from "../models/Job.js";
+import Student from "../models/student_schema.js";
+import Job from "../models/job_schema.js";
 
 const router = express.Router();
 
