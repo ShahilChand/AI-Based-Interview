@@ -150,10 +150,10 @@ const PortalLayout = ({ onLogout }) => {
         <div className="p-6 border-t border-gray-800/50">
           <div className="flex items-center gap-3 p-3 rounded-xl bg-gray-800/30 border border-gray-700/50">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-green-400 to-teal-400 flex items-center justify-center text-black font-semibold">
-              JD
+              SC
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium text-white truncate">John Doe</p>
+              <p className="text-sm font-medium text-white truncate">User</p>
               <p className="text-xs text-gray-400">Software Engineer</p>
             </div>
             <div className="flex items-center">
@@ -261,9 +261,9 @@ const PortalLayout = ({ onLogout }) => {
                 className="flex items-center gap-3 p-2 rounded-xl bg-gray-800/50 border border-gray-700 hover:border-gray-600 transition-all"
               >
                 <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-green-400 to-teal-400 flex items-center justify-center text-black font-semibold text-sm">
-                  JD
+                  SC
                 </div>
-                <span className="hidden sm:inline text-sm text-white">John Doe</span>
+                <span className="hidden sm:inline text-sm text-white">User</span>
                 <svg className={`w-4 h-4 text-gray-400 transition-transform ${profileOpen ? 'rotate-180' : ''}`} fill="currentColor" viewBox="0 0 24 24">
                   <path d="M7 10L12 15L17 10H7Z"/>
                 </svg>
@@ -273,8 +273,8 @@ const PortalLayout = ({ onLogout }) => {
               {profileOpen && (
                 <div className="absolute right-0 mt-2 w-56 bg-gray-900 border border-gray-800 rounded-2xl shadow-2xl shadow-black/50 py-2 z-50">
                   <div className="px-4 py-3 border-b border-gray-800">
-                    <p className="text-sm font-medium text-white">John Doe</p>
-                    <p className="text-xs text-gray-400">john.doe@example.com</p>
+                    <p className="text-sm font-medium text-white">User</p>
+                    <p className="text-xs text-gray-400">user@example.com</p>
                   </div>
                   <div className="py-2">
                     <button 
