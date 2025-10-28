@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { api } from '../../services/api';
 
 const LoginPage = ({ onLogin }) => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [userType, setUserType] = useState('student');
@@ -8,20 +11,18 @@ const LoginPage = ({ onLogin }) => {
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  // Hardcoded login - no backend authentication required
+  // Backend login
   const handleSubmit = async (event) => {
     event.preventDefault();
     setError('');
     setIsLoading(true);
 
-    // Simulate loading delay for better UX
-    await new Promise(resolve => setTimeout(resolve, 800));
-
-    if (username.trim() && password.trim()) {
-      console.log('Login successful with hardcoded authentication');
-      onLogin(); // Call the parent function to handle authentication state
-    } else {
-      setError('Please enter both username and password.');
+    try {
+      const data = await api.login({ username, password });
+      localStorage.setItem('token', data.token);
+      onLogin(data.user);
+    } catch (e) {
+      setError('Invalid credentials');
     }
     setIsLoading(false);
   };
@@ -207,12 +208,14 @@ const LoginPage = ({ onLogin }) => {
                 <div className="flex gap-3">
                   <button
                     type="button"
+                    onClick={() => navigate('/signup?role=student')}
                     className="flex-1 py-3 px-4 border border-gray-700 text-gray-300 rounded-xl hover:bg-gray-800/50 hover:border-gray-600 transition-all duration-300 text-sm font-medium"
                   >
                     Create Student Account
                   </button>
                   <button
                     type="button"
+                    onClick={() => navigate('/signup?role=recruiter')}
                     className="flex-1 py-3 px-4 border border-gray-700 text-gray-300 rounded-xl hover:bg-gray-800/50 hover:border-gray-600 transition-all duration-300 text-sm font-medium"
                   >
                     Create Recruiter Account
