@@ -27,7 +27,7 @@ if not API_KEY:
 client = genai.Client(api_key=API_KEY)
 
 # Use the latest stable model
-MODEL_NAME = "gemini-2.0-flash" 
+MODEL_NAME = "gemini-2.5-flash" 
 
 # --- 2. Data Models ---
 class CandidateProfile(BaseModel):
